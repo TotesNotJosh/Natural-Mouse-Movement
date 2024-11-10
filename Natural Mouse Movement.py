@@ -35,7 +35,7 @@ def move_mouse(first_position, second_position, draw):
         time.sleep(timeout)
     p.mouseUp()
 
-def main(coords):
+def handle_coordinates(coords):
     x1, y1 = next(iter(coords.items()))
     move_mouse((p.position()),(x1, y1), draw = False) #Moves the mouse from the wherever it might be when the script starts to the first positions in the dictionary
     x_coords = list(coords.keys())
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     star = {600:900, 900:180, 1200:930, 450:400, 1290:420, 610:910} #Draws a five pointed star
     square = {600:900, 1100:900, 1110:400, 610:400, 605:900} #Draws a square
     triangle = {800:300, 600:750, 1000:750, 810:300} #Draws a triangle
-    main(triangle)
-    main(square)
-    main(star)
+    handle_coordinates(triangle)
+    handle_coordinates(square)
+    handle_coordinates(star)
     
